@@ -1,0 +1,18 @@
+test_id: UC002
+description: Test rejection due to missing required email field.
+endpoint: /api/users
+method: POST
+
+request:
+  body:
+    name: 'No Email Test'
+    # email field is missing
+    age: 40
+  
+expected_response:
+  status_code: 400
+  json_schema_validation: True
+  body_contains:
+    success: False
+    error: 'Email is required'
+    
