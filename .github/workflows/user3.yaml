@@ -1,0 +1,12 @@
+request:
+  body:
+    name: 'Minor Client'
+    email: 'minor@example.com'
+    age: 17 # Invalid age
+  
+expected_response:
+  status_code: 400
+  json_schema_validation: True
+  body_contains:
+    success: False
+    error: 'User must be at least 18 years old'
