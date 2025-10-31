@@ -1,0 +1,17 @@
+
+
+request:
+  body:
+    name: 'Alice Johnson'
+    email: 'alice.j@example.com'
+    age: 35
+  
+expected_response:
+  status_code: 201
+  json_schema_validation: True
+  body_contains:
+    success: True
+    data:
+      name: 'Alice Johnson'
+      email: 'alice.j@example.com'
+      age: 35
